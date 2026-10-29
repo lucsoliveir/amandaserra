@@ -1,0 +1,12 @@
+AMANDA SERRA - pacote para Vercel
+
+Estrutura:
+  index.html
+  vercel.json
+  assets/   (video do hero, fotos, avatar, logo e fundo)
+
+Nao falta nenhum arquivo: e so publicar.
+
+Como publicar:
+  - Painel da Vercel: arraste a PASTA (ja descompactada) para o dashboard, ou
+  - Terminal: entre na pasta e rode  vercel --prod

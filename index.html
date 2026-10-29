@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanda Serra | Nail Designer em Maricá</title>
+<meta name="description" content="Amanda Serra — Nail Designer em Maricá - RJ. Alongamento de unhas com acrigel, fibra e molde F1. Há 7 anos elevando a autoestima de mulheres incríveis. Atendimento com horário marcado.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #EAE6E2;
+    --surface: #F7F4F2;
+    --surface-alt: #E6E2DE;
+    --surface-veil: rgba(247,244,242,.80);
+    --text: #1A1A1A;
+    --text-muted: #4A4440;
+    --text-muted-2: #6B6B6B;
+    --accent: #5C2430;
+    --accent-dark: #3A1620;
+    --organic: #D9B8AE;
+    --on-accent: #F4F1EE;
+
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --header-h: 96px;
+    --radius-pill: 999px;
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  section{ scroll-margin-top: var(--header-h); }
+
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  button{ font-family: inherit; cursor:pointer; }
+
+  h1,h2,h3{ font-family: var(--font-display); font-weight:600; letter-spacing: -0.01em; }
+  em{ font-style: italic; color: var(--accent); }
+
+  .container{ max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); font-weight:600; margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content:""; width:22px; height:1px; background: var(--accent);
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding: 15px 30px; border-radius: var(--radius-pill);
+    font-family: var(--font-body); font-weight:600; font-size: 15px;
+    border: 1px solid transparent; transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease);
+    white-space: nowrap;
+  }
+  .btn-primary{
+    position:relative; overflow:hidden;
+    background: var(--accent); color: var(--on-accent);
+    box-shadow: 0 8px 24px -8px rgba(92,36,48,.55);
+  }
+  .btn-primary::after{
+    content:"";
+    position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+    transform: skewX(-20deg);
+    animation: shine 3.2s ease-in-out infinite;
+  }
+  @keyframes shine{
+    0%{ left:-60%; }
+    45%{ left:130%; }
+    100%{ left:130%; }
+  }
+  .btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 14px 28px -10px rgba(92,36,48,.6); }
+
+  .btn-outline{
+    background: transparent; border-color: var(--accent); color: var(--accent);
+  }
+  .btn-outline:hover{ background: var(--accent); color: var(--on-accent); transform: translateY(-3px); }
+
+  .btn-ghost{
+    background: transparent; border-color: rgba(244,241,238,.4); color: var(--on-accent);
+  }
+  .btn-ghost:hover{ background: rgba(244,241,238,.1); border-color: rgba(244,241,238,.8); transform: translateY(-3px); }
+
+  /* ---------- AMBIENT SMOKE (fundo) ---------- */
+  .ambient-smoke{
+    position: fixed; inset: 0; z-index: -1;
+    overflow: hidden; pointer-events: none;
+  }
+  .ambient-smoke span{
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(110px);
+    mix-blend-mode: multiply;
+    opacity: 0.4;
+    background: radial-gradient(circle, rgba(196,178,214,.75) 0%, rgba(196,178,214,0) 72%);
+    will-change: transform;
+  }
+  .smoke-a{ width: 620px; height: 620px; top: -180px; left: -140px; animation: drift-a 46s ease-in-out infinite alternate; }
+  .smoke-b{ width: 520px; height: 520px; top: 38%; right: -180px; animation: drift-b 52s ease-in-out infinite alternate; opacity: 0.32; }
+  .smoke-c{ width: 560px; height: 560px; bottom: -220px; left: 18%; animation: drift-c 60s ease-in-out infinite alternate; opacity: 0.3; }
+
+  @keyframes drift-a{
+    0%{ transform: translate(0,0) scale(1); }
+    100%{ transform: translate(60px, 50px) scale(1.12); }
+  }
+  @keyframes drift-b{
+    0%{ transform: translate(0,0) scale(1); }
+    100%{ transform: translate(-70px, 40px) scale(1.08); }
+  }
+  @keyframes drift-c{
+    0%{ transform: translate(0,0) scale(1); }
+    100%{ transform: translate(50px, -40px) scale(1.1); }
+  }
+
+  header.site-header{
+    position: fixed; top:0; left:0; right:0; z-index: 1000;
+    height: var(--header-h);
+    display:flex; align-items:center;
+    border-bottom: 1px solid rgba(26,26,26,.06);
+    transition: box-shadow .3s var(--ease);
+    isolation: isolate;
+  }
+  header.site-header.scrolled{ box-shadow: 0 8px 30px -18px rgba(26,26,26,.25); }
+
+  /* Liquid glass: camada de desfoque + camada de distorção líquida (SVG) */
+  .glass-blur{
+    position:absolute; inset:0; z-index:-2;
+    background: rgba(234,230,226,.88);
+    backdrop-filter: blur(16px) saturate(165%);
+    -webkit-backdrop-filter: blur(16px) saturate(165%);
+  }
+  .glass-liquid{
+    position:absolute; inset:0; z-index:-1;
+    pointer-events:none;
+    opacity: .55;
+    mix-blend-mode: overlay;
+    background: linear-gradient(120deg,
+      rgba(255,255,255,.55) 0%,
+      rgba(92,36,48,.06) 30%,
+      rgba(255,255,255,.4) 55%,
+      rgba(217,184,174,.35) 78%,
+      rgba(255,255,255,.5) 100%);
+    background-size: 220% 220%;
+    filter: url(#liquidGlass);
+    animation: liquid-sheen 16s ease-in-out infinite;
+  }
+  @keyframes liquid-sheen{
+    0%{ background-position: 0% 30%; }
+    50%{ background-position: 100% 70%; }
+    100%{ background-position: 0% 30%; }
+  }
+
+  .nav-wrap{
+    width:100%; display:flex; align-items:center; justify-content:space-between;
+    position: relative; z-index: 1;
+  }
+  .logo{
+    font-family: var(--font-display); font-size: 27px; font-weight:600; letter-spacing:.01em; line-height:1;
+  }
+  .logo em{ color: var(--accent); }
+  .logo img{ height: 80px; width: auto; display:block; }
+
+  /* ---------- FUNDO DO SITE (imagem fixa) ---------- */
+  .site-bg{
+    position: fixed; inset: 0; z-index: -3;
+    background:
+      radial-gradient(1100px 700px at 15% 0%, #FCFAF6 0%, rgba(252,250,246,0) 62%),
+      radial-gradient(900px 640px at 100% 100%, #F2E8E2 0%, rgba(242,232,226,0) 62%),
+      #F6F4EF;
+    pointer-events: none;
+  }
+
+  .nav-links{ display:flex; align-items:center; gap:38px; }
+  .nav-links a{
+    font-size: 14.5px; font-weight:500; color: var(--text-muted); position:relative;
+    transition: color .25s var(--ease);
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-6px; width:0; height:1px; background: var(--accent);
+    transition: width .3s var(--ease);
+  }
+  .nav-links a:hover{ color: var(--text); }
+  .nav-links a:hover::after{ width:100%; }
+
+  .nav-cta{ display:flex; align-items:center; gap:18px; }
+  .hamburger{
+    display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px;
+  }
+  .hamburger span{ width:24px; height:2px; background: var(--text); transition: transform .3s var(--ease), opacity .3s var(--ease); }
+
+  .mobile-menu{
+    position: fixed; inset: var(--header-h) 0 0 0; z-index: 999;
+    background: var(--bg);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px;
+    transform: translateY(-12px); opacity:0; pointer-events:none;
+    transition: opacity .35s var(--ease), transform .35s var(--ease);
+  }
+  .mobile-menu.open{ opacity:1; transform: translateY(0); pointer-events:all; }
+  .mobile-menu a{ font-family: var(--font-display); font-size: 26px; }
+
+  /* ---------- HERO (vídeo full-bleed) ---------- */
+  .hero{
+    position: relative;
+    min-height: 100svh;
+    display:flex; align-items:center;
+    padding: calc(var(--header-h) + 40px) 0 90px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-media{
+    position:absolute; inset:0; z-index:-1;
+    background: #14100f;
+  }
+  .hero-media video{
+    width:100%; height:100%; object-fit: cover; object-position: center; display:block;
+  }
+  .hero-media::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      linear-gradient(100deg, rgba(20,16,15,.82) 0%, rgba(20,16,15,.62) 34%, rgba(20,16,15,.32) 62%, rgba(20,16,15,.18) 100%),
+      linear-gradient(0deg, rgba(20,16,15,.55) 0%, rgba(20,16,15,0) 26%, rgba(20,16,15,0) 78%, rgba(20,16,15,.4) 100%);
+  }
+  .hero-inner{ position:relative; z-index:1; }
+  .hero-copy{ max-width: 620px; }
+  .hero-copy .eyebrow{ color: var(--organic); }
+  .hero-copy .eyebrow::before{ background: var(--organic); }
+  .hero-title{
+    font-size: clamp(42px, 5.2vw, 68px); line-height: 1.06; margin-bottom: 26px;
+    color: var(--on-accent);
+  }
+  .hero-title em{ color: var(--organic); }
+  .hero-sub{
+    font-size: 17.5px; color: rgba(244,241,238,.86); max-width: 480px; margin-bottom: 40px;
+  }
+  .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom: 46px; }
+
+  .hero-meta{ display:flex; gap: 38px; }
+  .hero-meta div{ display:flex; flex-direction:column; gap:4px; }
+  .hero-meta .num{ font-family: var(--font-display); font-size: 15px; color: var(--organic); }
+  .hero-meta .lbl{ font-size: 12.5px; color: rgba(244,241,238,.62); }
+
+
+  /* ---------- HERO: texto à esquerda ---------- */
+  .hero .hero-inner{
+    max-width: none; margin: 0; width: 100%;
+    padding: 0 clamp(24px, 6vw, 110px);
+  }
+
+  /* ---------- VALORES: foto do estúdio à direita, com transição suave para o fundo ---------- */
+  #precos{ position: relative; overflow: hidden; }
+  #precos .container{ position: relative; z-index: 1; }
+  #precos .section-head{ text-align: left; max-width: none; margin-left: 0; margin-right: 0; }
+  #precos .section-head .eyebrow{ justify-content: flex-start !important; }
+  .precos-photo{
+    position: absolute; top: 0; right: 0; bottom: 0; z-index: 0;
+    width: min(56vw, 860px); pointer-events: none;
+    -webkit-mask-image:
+      linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.22) 12%, rgba(0,0,0,.62) 24%, #000 38%),
+      linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 18%, #000 82%, rgba(0,0,0,0) 100%);
+    mask-image:
+      linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.22) 12%, rgba(0,0,0,.62) 24%, #000 38%),
+      linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 18%, #000 82%, rgba(0,0,0,0) 100%);
+    -webkit-mask-composite: source-in; mask-composite: intersect;
+  }
+  .precos-photo img{ width: 100%; height: 100%; object-fit: cover; object-position: center 58%; display: block; }
+  @media (max-width: 980px){
+    #precos .section-head{ text-align: center; }
+    #precos .section-head .eyebrow{ justify-content: center !important; }
+    .precos-list{ margin: 0 auto !important; }
+    .precos-photo{
+      position: relative; width: 100%; height: 440px; margin-top: 36px;
+      -webkit-mask-image:
+        linear-gradient(90deg, rgba(0,0,0,0) 0%, #000 8%, #000 92%, rgba(0,0,0,0) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 22%, #000 78%, rgba(0,0,0,0) 100%);
+      mask-image:
+        linear-gradient(90deg, rgba(0,0,0,0) 0%, #000 8%, #000 92%, rgba(0,0,0,0) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 22%, #000 78%, rgba(0,0,0,0) 100%);
+    }
+  }
+
+  /* ---------- LIQUID GLASS AO ROLAR ---------- */
+  :root{ --lg-v: 0; }
+  header.site-header{
+    transform-origin: 50% 0;
+    transition: top .55s var(--ease), left .55s var(--ease), right .55s var(--ease),
+                height .55s var(--ease), border-radius .55s var(--ease),
+                box-shadow .45s var(--ease), border-color .45s var(--ease);
+  }
+  .logo img{ transition: height .55s var(--ease); }
+  /* ao rolar, o cabeçalho vira uma cápsula de vidro líquido flutuante */
+  header.site-header.scrolled{
+    top: 10px; left: clamp(12px, 2.4vw, 36px); right: clamp(12px, 2.4vw, 36px);
+    height: 78px; border-radius: 999px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.6);
+    box-shadow:
+      0 18px 44px -16px rgba(26,26,26,.45),
+      inset 0 1px 0 rgba(255,255,255,.9),
+      inset 0 -1px 0 rgba(255,255,255,.35),
+      inset 0 0 26px rgba(255,255,255,.28);
+    /* efeito gelatina: achata levemente conforme a velocidade da rolagem */
+    transform: scale(calc(1 + var(--lg-v) * .012), calc(1 - var(--lg-v) * .06));
+  }
+  header.site-header.scrolled .glass-blur{
+    background: rgba(246,242,238,.6);
+    backdrop-filter: blur(22px) saturate(190%) brightness(1.05);
+    -webkit-backdrop-filter: blur(22px) saturate(190%) brightness(1.05);
+  }
+  header.site-header.scrolled .glass-liquid{ opacity: .95; }
+  header.site-header.scrolled .nav-wrap{ padding-left: 42px; padding-right: 42px; }
+  header.site-header.scrolled .logo img{ height: 60px; }
+  @media (max-width: 560px){
+    header.site-header.scrolled{ height: 68px; }
+    header.site-header.scrolled .logo img{ height: 52px; }
+    header.site-header.scrolled .nav-wrap{ padding-left: 22px; padding-right: 22px; }
+  }
+  /* cards com brilho de vidro que atravessa conforme você desce a página */
+  .lg-card{
+    position: relative; overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.8), inset 0 0 0 1px rgba(255,255,255,.3);
+  }
+  .lg-card::before{
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    pointer-events: none; z-index: 0;
+    background: linear-gradient(115deg,
+      rgba(255,255,255,0) calc(var(--sheen, -40%) - 24%),
+      rgba(255,255,255,.55) var(--sheen, -40%),
+      rgba(255,255,255,0) calc(var(--sheen, -40%) + 24%));
+  }
+  .lg-card > *{ position: relative; z-index: 1; }
+
+  /* ---------- PARALLAX ---------- */
+  .hero-media{ inset: -16% 0 -16% 0; }            /* mídia maior que a seção para poder deslizar */
+  .about-frame{ overflow: hidden; }
+  .hero-media, .hero-copy, .about-frame img, .precos-photo img,
+  .service-card:nth-child(3n+2), .location-map{ will-change: translate; }
+
+  /* ---------- AJUSTES PARA TELAS PEQUENAS ---------- */
+  @media (max-width: 560px){
+    .footer-links{ flex-wrap: wrap; justify-content: center; gap: 10px 20px; }
+  }
+  @media (max-width: 400px){
+    header.site-header .nav-cta{ gap: 10px; }
+    header.site-header .nav-cta .btn{ padding: 10px 16px !important; font-size: 13px !important; }
+    .logo img{ height: 66px; }
+    header.site-header.scrolled .logo img{ height: 48px; }
+    header.site-header.scrolled .nav-wrap{ padding-left: 18px; padding-right: 18px; }
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform: translateY(0); }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{ text-align:center; max-width: 640px; margin: 0 auto 64px; }
+  .section-head h2{ font-size: clamp(30px, 3.6vw, 44px); }
+  .section-head p{ color: var(--text-muted); margin-top: 16px; font-size: 16px; }
+
+  section{ padding: 110px 0; }
+
+  /* ---------- SERVICES ---------- */
+  .services{ background: var(--surface-veil); }
+  .service-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .service-card{
+    background: var(--bg); border-radius: 28px; padding: 44px 34px;
+    border: 1px solid rgba(26,26,26,.06);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+    position: relative;
+  }
+  .service-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 30px 50px -28px rgba(26,26,26,.25);
+    border-color: rgba(92,36,48,.25);
+  }
+  .service-num{
+    font-family: var(--font-display); font-style: italic; color: var(--organic);
+    font-size: 46px; line-height:1; margin-bottom: 22px;
+  }
+  .service-card h3{ font-size: 22px; margin-bottom: 12px; }
+  .service-card p{ color: var(--text-muted); font-size: 15px; }
+  .service-line{ width: 34px; height:1px; background: var(--accent); margin: 22px 0 0; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-head{ display:flex; align-items:flex-end; justify-content:space-between; margin-bottom: 44px; gap: 24px; flex-wrap:wrap; }
+  .gallery-head h2{ font-size: clamp(30px, 3.6vw, 44px); max-width: 560px; }
+  .gallery-hint{ color: var(--text-muted-2); font-size: 13.5px; }
+
+  .gallery-track{
+    display:flex; gap: 22px; overflow-x: auto; padding-bottom: 20px;
+    cursor: grab; scroll-snap-type: x proximity;
+    user-select: none;
+    -ms-overflow-style: none; scrollbar-width: none;
+  }
+  .gallery-track::-webkit-scrollbar{ display:none; }
+  .gallery-track.dragging{ cursor: grabbing; scroll-snap-type: none; }
+
+  .gallery-card{
+    flex: 0 0 280px; scroll-snap-align: start;
+    border-radius: 22px; overflow:hidden; position:relative;
+    aspect-ratio: 4/5;
+    border: 1px solid rgba(92,36,48,.16);
+    background: var(--surface);
+    box-shadow: 0 18px 34px -22px rgba(26,26,26,.28);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .gallery-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 26px 44px -22px rgba(26,26,26,.32);
+  }
+  .gallery-card img, .gallery-card svg.placeholder-art{ width:100%; height:100%; object-fit:cover; pointer-events:none; display:block; }
+  .gallery-card .tag{
+    position:absolute; top:16px; left:16px; display:flex; align-items:center; gap:8px;
+    font-size: 11.5px; letter-spacing:.08em; text-transform:uppercase; color: var(--on-accent);
+    background: rgba(58,22,32,.55); backdrop-filter: blur(6px);
+    padding: 7px 12px; border-radius: var(--radius-pill);
+  }
+  .gallery-card .count{
+    position:absolute; bottom:16px; right:16px;
+    font-family: var(--font-display); font-style: italic; color: var(--on-accent);
+    font-size: 14px;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{ background: var(--surface); }
+  .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+  .testi-card{
+    background: var(--bg); border-radius: 26px; padding: 38px 32px;
+    border: 1px solid rgba(26,26,26,.06);
+    transform-style: preserve-3d; will-change: transform;
+    transition: transform .15s ease-out, box-shadow .3s var(--ease);
+  }
+  .testi-card:hover{ box-shadow: 0 26px 46px -26px rgba(26,26,26,.3); }
+  .testi-quote{ font-family: var(--font-display); font-style:italic; color: var(--accent); font-size: 40px; line-height:1; margin-bottom: 16px; }
+  .testi-text{ color: var(--text-muted); font-size: 15px; margin-bottom: 26px; }
+  .testi-person{ display:flex; align-items:center; gap:12px; }
+  .testi-avatar{
+    width: 42px; height:42px; border-radius:50%; border:1px solid var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--font-display); color: var(--accent); font-size:15px; flex-shrink:0;
+  }
+  .testi-person strong{ font-size: 14px; display:block; }
+  .testi-person span{ font-size: 12.5px; color: var(--text-muted-2); }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{ display:grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items:center; }
+  .about-frame{
+    border-radius: 24px; overflow:hidden; aspect-ratio: 4/5;
+    border: 1px solid rgba(92,36,48,.15);
+  }
+  .about-frame img, .about-frame svg.placeholder-art{ width:100%; height:100%; object-fit:cover; object-position: top; display:block; }
+  /* Avatar ilustrado: busto ancorado na base da moldura, sobre fundo rosé da paleta */
+  .about-frame--avatar{
+    display:flex; align-items:flex-end; justify-content:center;
+    background:
+      radial-gradient(circle at 50% 36%, rgba(255,255,255,.38) 0%, rgba(255,255,255,0) 58%),
+      linear-gradient(165deg, #EBD6CE 0%, var(--organic) 100%);
+  }
+  .about-frame--avatar img{ width:100%; height:auto; object-fit:contain; object-position:bottom; }
+  .about-text h2{ font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 22px; }
+  .about-text p{ color: var(--text-muted); font-size: 16px; margin-bottom: 20px; max-width: 520px; }
+  .about-facts{ display:flex; gap: 34px; margin: 30px 0 34px; flex-wrap:wrap; }
+  .about-facts div{ display:flex; align-items:flex-start; gap:12px; max-width: 220px; }
+  .about-facts .mono-sm{
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--accent); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-family: var(--font-display); color:var(--accent); font-size:13px;
+  }
+  .about-facts p{ font-size: 13.5px; margin:0; color: var(--text-muted-2); }
+
+  /* ---------- LOCALIZAÇÃO ---------- */
+  .location-grid{
+    display:grid; grid-template-columns: .95fr 1.05fr; gap: 64px; align-items:center;
+  }
+  .location-text p{ color: var(--text-muted); font-size: 16px; margin-bottom: 26px; max-width: 480px; }
+  .location-info{ display:flex; flex-direction:column; gap:16px; margin-bottom: 34px; }
+  .location-info div{ display:flex; align-items:flex-start; gap:14px; }
+  .location-info .mono-sm{
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--accent); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:14px;
+  }
+  .location-info p{ font-size: 14.5px; margin:0; color: var(--text-muted); max-width: none; }
+  .location-info a{ color: var(--text); transition: color .25s var(--ease); }
+  .location-info a:hover{ color: var(--accent); }
+  .location-btns{ display:flex; gap:14px; flex-wrap:wrap; }
+  .location-map{
+    position: relative; width:100%; max-width: 540px; margin: 0 auto;
+    border-radius: 50%; overflow:hidden; aspect-ratio: 1/1;
+    border: 6px solid var(--surface);
+    box-shadow: 0 30px 60px -28px rgba(26,26,26,.4), 0 0 0 1px rgba(92,36,48,.18);
+    isolation: isolate;
+  }
+  /* iframe maior que o círculo: os cantos (com os controles do Google) ficam cortados; o mapa continua arrastável e com zoom por scroll/pinça */
+  .location-map iframe{
+    position:absolute; top:50%; left:50%; width:134%; height:134%;
+    transform: translate(-50%,-50%); border:0; display:block;
+  }
+  @media (max-width: 980px){
+    .location-grid{ grid-template-columns: 1fr; }
+    .location-map{ aspect-ratio: 1/1; max-width: 440px; margin: 0 auto; }
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee-wrap{
+    background: var(--surface-alt); padding: 26px 0; overflow:hidden;
+    transform: rotate(-1.2deg); border-top:1px solid rgba(26,26,26,.06); border-bottom:1px solid rgba(26,26,26,.06);
+  }
+  .marquee{ display:flex; width: max-content; animation: marquee 34s linear infinite; }
+  .marquee span{
+    font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--accent);
+    padding: 0 34px; white-space:nowrap; display:flex; align-items:center; gap:34px;
+  }
+  @keyframes marquee{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{
+    background: var(--accent-dark); color: var(--on-accent);
+    position: relative; overflow:hidden; text-align:center;
+  }
+  .cta-final .watermark{
+    position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+    font-family: var(--font-display); font-style: italic; font-size: clamp(90px, 18vw, 260px);
+    color: rgba(244,241,238,.045); white-space:nowrap; pointer-events:none; letter-spacing: -0.02em;
+  }
+  .cta-final-inner{ position:relative; z-index:2; max-width: 620px; margin:0 auto; }
+  .cta-final h2{ font-size: clamp(32px, 4.2vw, 52px); margin-bottom: 20px; }
+  .cta-final p{ color: rgba(244,241,238,.7); font-size: 16px; margin-bottom: 44px; }
+  .cta-final-btns{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{
+    position: fixed; right: 26px; bottom: 26px; z-index: 900;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--accent); color: var(--on-accent);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 14px 30px -10px rgba(92,36,48,.6);
+  }
+  .wa-float::before{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    border: 2px solid var(--accent); animation: pulse 2.6s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{ transform: scale(1); opacity:.65; }
+    100%{ transform: scale(1.8); opacity:0; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background: var(--bg); padding: 54px 0 34px; border-top:1px solid rgba(26,26,26,.08); }
+  .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 18px; }
+  .footer-inner p{ font-size: 13.5px; color: var(--text-muted-2); }
+  .footer-links{ display:flex; gap: 22px; }
+  .footer-links a{ font-size: 13.5px; color: var(--text-muted); }
+  .footer-links a:hover{ color: var(--accent); }
+  .back-top{
+    width: 40px; height: 40px; border-radius:50%; border:1px solid rgba(26,26,26,.15);
+    display:flex; align-items:center; justify-content:center; transition: border-color .3s var(--ease), transform .3s var(--ease);
+  }
+  .back-top:hover{ border-color: var(--accent); transform: translateY(-3px); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .nav-links{ display:none; }
+    .hamburger{ display:flex; }
+    .service-grid, .testi-grid{ grid-template-columns: 1fr; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .about-frame{ max-width: 420px; margin: 0 auto; }
+  }
+  @media (max-width: 560px){
+    .container{ padding: 0 20px; }
+    section{ padding: 80px 0; }
+    .hero{ padding-top: calc(var(--header-h) + 56px); min-height: 92svh; }
+    .hero-cta{ flex-direction:column; }
+    .hero-cta .btn{ width:100%; }
+    .hero-meta{ gap: 22px; }
+    .cta-final-btns{ flex-direction:column; }
+    .cta-final-btns .btn{ width:100%; }
+    .footer-inner{ flex-direction:column; text-align:center; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    .reveal{ opacity:1; transform:none; }
+    /* Faixa marquee: mantém o loop sempre ativo (movimento linear e suave, baixo risco) */
+    .marquee{ animation-duration: 34s !important; animation-iteration-count: infinite !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Filtro SVG usado pelas superfícies de "liquid glass" (header e badge) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="liquidGlass" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence id="liquidTurbulence" type="fractalNoise" baseFrequency="0.010 0.018" numOctaves="2" seed="7" result="noise"></feTurbulence>
+    <feDisplacementMap id="liquidDisplace" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+  </filter>
+</svg>
+
+<div class="site-bg" aria-hidden="true"></div>
+
+<div class="ambient-smoke" aria-hidden="true">
+  <span class="smoke-a"></span>
+  <span class="smoke-b"></span>
+  <span class="smoke-c"></span>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="glass-blur"></div>
+  <div class="glass-liquid"></div>
+  <div class="container nav-wrap">
+    <a href="#top" class="logo" aria-label="Amanda Serra — início"><img src="assets/logo-amanda-serra.png" alt="Amanda Serra — Designer de unhas" width="420" height="260"></a>
+
+    <nav class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#precos">Preços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="https://api.whatsapp.com/send?phone=5521996814901&amp;text=Ol%C3%A1%2C+tudo+bem%3F" target="_blank" rel="noopener" class="btn btn-primary" style="padding:12px 24px; font-size:14px;">Agendar Horário</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicos">Serviços</a>
+  <a href="#precos">Preços</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#localizacao">Localização</a>
+  <a href="#contato">Contato</a>
+  <a href="https://api.whatsapp.com/send?phone=5521996814901&amp;text=Ol%C3%A1%2C+tudo+bem%3F" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">Agendar Horário</a>
+</div>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-media">
+      <video
+        src="assets/hero-video.mp4"
+        poster="assets/hero-video-poster.jpg"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-label="Vídeo mostrando o processo de nail design de Amanda Serra">
+      </video>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Estúdio de Nail Design</span>
+        <h1 class="hero-title"><em>Nail Design</em><br>de alto padrão</h1>
+        <p class="hero-sub">O lugar onde suas mãos recebem o cuidado que merecem — onde cada cor, formato e detalhe são pensados para expressar o seu estilo.</p>
+        <div class="hero-cta">
+          <a href="https://api.whatsapp.com/send?phone=5521996814901&amp;text=Ol%C3%A1%2C+tudo+bem%3F" target="_blank" rel="noopener" class="btn btn-primary">Agende seu Horário</a>
+          <a href="#servicos" class="btn btn-ghost">Conheça nossos Serviços</a>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <span class="num">7 anos</span>
+            <span class="lbl">de experiência</span>
+          </div>
+          <div>
+            <span class="num">Materiais</span>
+            <span class="lbl">de primeira linha</span>
+          </div>
+          <div>
+            <span class="num">Biossegurança</span>
+            <span class="lbl">em cada etapa</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SERVIÇOS ================= -->
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="justify-content:center;">Nossos Serviços</span>
+        <h2>Técnicas pensadas para durar e encantar</h2>
+        <p>Cada procedimento é conduzido com atenção ao detalhe, do preparo à finalização.</p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card reveal">
+          <div class="service-num">01</div>
+          <h3>Alongamentos</h3>
+          <p>Acrigel e fibra para realçar a beleza e o formato das suas unhas.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">02</div>
+          <h3>Molde F1</h3>
+          <p>Alongamento com molde F1 para um formato uniforme e acabamento delicado.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">03</div>
+          <h3>Esmaltação em Gel</h3>
+          <p>Mais brilho, durabilidade e acabamento impecável.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">04</div>
+          <h3>Nail Art</h3>
+          <p>Decorações personalizadas para todos os estilos.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">05</div>
+          <h3>Manutenção</h3>
+          <p>Cuidado e fortalecimento para unhas sempre lindas.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">06</div>
+          <h3>Blindagem</h3>
+          <p>Proteção e resistência para unhas naturais.</p>
+          <div class="service-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LISTA DE PREÇOS ================= -->
+  <section id="precos" style="background: var(--surface-veil);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="justify-content:center;">Lista de Preços</span>
+        <h2>Valores dos <em>procedimentos</em></h2>
+      </div>
+
+      <div class="precos-list" style="max-width: 560px; margin: 0; display:flex; flex-direction:column; gap:14px;">
+        <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; background: var(--bg); border-radius: 999px; padding: 16px 28px; border: 1px solid rgba(26,26,26,.06);">
+          <span style="font-weight:600;">💗 Acrílico simples</span>
+          <span style="font-family: var(--font-display); color: var(--accent); font-size: 18px;">A definir</span>
+        </div>
+        <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; background: var(--bg); border-radius: 999px; padding: 16px 28px; border: 1px solid rgba(26,26,26,.06);">
+          <span style="font-weight:600;">💗 Acrílico encapsulada</span>
+          <span style="font-family: var(--font-display); color: var(--accent); font-size: 18px;">A definir</span>
+        </div>
+        <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; background: var(--bg); border-radius: 999px; padding: 16px 28px; border: 1px solid rgba(26,26,26,.06);">
+          <span style="font-weight:600;">💗 Blindagem em acrílico</span>
+          <span style="font-family: var(--font-display); color: var(--accent); font-size: 18px;">A definir</span>
+        </div>
+        <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; background: var(--bg); border-radius: 999px; padding: 16px 28px; border: 1px solid rgba(26,26,26,.06);">
+          <span style="font-weight:600;">💗 Manutenção</span>
+          <span style="font-family: var(--font-display); color: var(--accent); font-size: 18px;">A definir</span>
+        </div>
+        <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; background: var(--bg); border-radius: 999px; padding: 16px 28px; border: 1px solid rgba(26,26,26,.06);">
+          <span style="font-weight:600;">💗 Esmaltação em gel</span>
+          <span style="font-family: var(--font-display); color: var(--accent); font-size: 18px;">A definir</span>
+        </div>
+      </div>
+    </div>
+    <div class="precos-photo reveal" aria-hidden="false">
+      <img src="assets/hero-estudio.webp" alt="Estúdio da Amanda Serra com a logo na parede e prateleiras de esmaltes" loading="lazy" width="900" height="1200">
+    </div>
+  </section>
+
+  <!-- ================= GALERIA ================= -->
+  <section id="galeria">
+    <div class="container">
+      <div class="gallery-head reveal">
+        <div>
+          <span class="eyebrow">Galeria</span>
+          <h2>Cada detalhe, <em>uma obra de arte</em></h2>
+        </div>
+        <span class="gallery-hint">arraste para o lado →</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="gallery-track reveal" id="galleryTrack">
+        <div class="gallery-card">
+          <img src="assets/gallery-1-nude-longo.webp" alt="Alongamento longo em tom nude, formato quadrado" loading="lazy">
+          <span class="tag">✦ Amanda Serra</span>
+          <span class="count">01</span>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/gallery-2-esfumado-lilas.webp" alt="Unhas amendoadas com efeito esfumado lilás, cristais e corações prateados" loading="lazy">
+          <span class="tag">✦ Amanda Serra</span>
+          <span class="count">02</span>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/gallery-3-vinho.webp" alt="Esmaltação vinho escuro brilhante em formato amendoado" loading="lazy">
+          <span class="tag">✦ Amanda Serra</span>
+          <span class="count">03</span>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/gallery-4-espiral-prata.webp" alt="Nail art com espiral prateada em alto relevo e relógio vermelho" loading="lazy">
+          <span class="tag">✦ Amanda Serra</span>
+          <span class="count">04</span>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/gallery-5-cartas-coracoes.webp" alt="Nail art com cartas de baralho, losangos vermelhos e corações prateados" loading="lazy">
+          <span class="tag">✦ Amanda Serra</span>
+          <span class="count">05</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section id="sobre">
+    <div class="container about-grid">
+      <div class="about-frame reveal">
+        <img src="assets/about-artista.webp" alt="Foto da artista Amanda Serra, Nail Designer" width="1024" height="1024" loading="lazy">
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">Sobre a Artista</span>
+        <h2>Sua autoestima <em>em cada detalhe</em></h2>
+        <p>Sou a Amanda Serra, Nail Designer em Maricá. Há 7 anos elevo a autoestima de mulheres incríveis com alongamento em acrigel, fibra e molde F1, além de esmaltação em gel, nail art personalizada, manutenção e blindagem — sempre com cuidado e atenção em cada etapa do atendimento.</p>
+        <p>Mais que unhas, cada visita é pensada para realçar a sua beleza e fortalecer a sua autoestima.</p>
+
+        <div class="about-facts">
+          <div>
+            <span class="mono-sm">✦</span>
+            <p>Nail art personalizada para todos os estilos.</p>
+          </div>
+          <div>
+            <span class="mono-sm">◆</span>
+            <p>Cada detalhe faz a diferença.</p>
+          </div>
+        </div>
+
+        <a href="#galeria" class="btn btn-outline">Conhecer meu trabalho</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCALIZAÇÃO ================= -->
+  <section id="localizacao" style="background: var(--surface-veil);">
+    <div class="container location-grid">
+      <div class="location-text reveal">
+        <span class="eyebrow">Onde Estamos</span>
+        <h2>Visite nosso <em>espaço</em></h2>
+        <p>Alongamento de unhas com acrigel, fibra e molde F1, em Maricá - RJ. Atendimento somente com horário marcado, para garantir um atendimento único e responsável.</p>
+
+        <div class="location-info">
+          <div>
+            <span class="mono-sm">📍</span>
+            <p>Flamengo, Maricá - RJ</p>
+          </div>
+          <div>
+            <span class="mono-sm">📞</span>
+            <p><a href="tel:+5521996814901">(21) 99681-4901</a></p>
+          </div>
+          <div>
+            <span class="mono-sm">📷</span>
+            <p><a href="https://www.instagram.com/amandaserraoficial/" target="_blank" rel="noopener">@amandaserraoficial</a></p>
+          </div>
+        </div>
+
+        <div class="location-btns">
+          <a href="https://www.google.com/maps/search/?api=1&query=Flamengo%2C%20Maric%C3%A1%20-%20RJ" target="_blank" rel="noopener" class="btn btn-outline">📍 Como Chegar</a>
+          <a href="https://api.whatsapp.com/send?phone=5521996814901&amp;text=Ol%C3%A1%2C+tudo+bem%3F" target="_blank" rel="noopener" class="btn btn-primary">Agendar Horário</a>
+        </div>
+      </div>
+
+      <div class="location-map reveal">
+        <iframe src="https://www.google.com/maps?q=Flamengo,+Maric%C3%A1+-+RJ&hl=pt-BR&z=16&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Localização Amanda Serra no mapa"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee-wrap">
+    <div class="marquee" id="marqueeTrack">
+      <span>✦ Agende seu horário ✦ Siga-nos no Instagram ✦ Nail Designs Criativos ✦ Amanda Serra ✦ Agende seu horário ✦ Siga-nos no Instagram ✦ Nail Designs Criativos ✦ Amanda Serra</span>
+      <span aria-hidden="true">✦ Agende seu horário ✦ Siga-nos no Instagram ✦ Nail Designs Criativos ✦ Amanda Serra ✦ Agende seu horário ✦ Siga-nos no Instagram ✦ Nail Designs Criativos ✦ Amanda Serra</span>
+    </div>
+  </div>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="cta-final" id="contato">
+    <span class="watermark">Amanda Serra</span>
+    <div class="container cta-final-inner">
+      <span class="eyebrow" style="justify-content:center; color: var(--organic);">Vamos Agendar?</span>
+      <h2>Pronta para se sentir confiante?</h2>
+      <p>Atendimento presencial mediante agendamento prévio. Fale com a gente e escolha o melhor horário para você.</p>
+      <div class="cta-final-btns">
+        <a href="https://api.whatsapp.com/send?phone=5521996814901&amp;text=Ol%C3%A1%2C+tudo+bem%3F" target="_blank" rel="noopener" class="btn btn-ghost">💬 Fale no WhatsApp</a>
+        <a href="https://www.instagram.com/amandaserraoficial/" target="_blank" rel="noopener" class="btn btn-ghost">📷 Instagram</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Flamengo%2C%20Maric%C3%A1%20-%20RJ" target="_blank" rel="noopener" class="btn btn-ghost">📍 Localização / Como Chegar</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= WHATSAPP FLOAT ================= -->
+<a href="https://api.whatsapp.com/send?phone=5521996814901&amp;text=Ol%C3%A1%2C+tudo+bem%3F" target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Amanda Serra. Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#precos">Preços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a href="#top" class="back-top" aria-label="Voltar ao topo">↑</a>
+  </div>
+</footer>
+
+<script>
+  // Ano dinâmico no rodapé
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header com sombra ao rolar
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
+  // Liquid glass: distorce sutilmente o vidro do header e do badge
+  // conforme a velocidade do scroll (sobe ou desce), acalmando quando parado.
+  const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!reduceMotionQuery.matches) {
+    const turbulence = document.getElementById('liquidTurbulence');
+    const displace = document.getElementById('liquidDisplace');
+    let lastY = window.scrollY;
+    let displayScale = 0;
+    let lastV = 0;
+    let sheenInit = false;
+    const lgCards = [...document.querySelectorAll('.service-card, .precos-list > div')];
+    lgCards.forEach(el => el.classList.add('lg-card'));
+
+    function animateLiquidGlass() {
+      // Lê a posição a cada frame (em vez de depender só do evento "scroll"),
+      // garantindo resposta simétrica tanto ao descer quanto ao subir a página.
+      const currentY = window.scrollY;
+      const delta = currentY - lastY;
+      lastY = currentY;
+
+      const targetScale = Math.min(Math.abs(delta) * 2.6, 34);
+      displayScale += (targetScale - displayScale) * (targetScale > displayScale ? 0.35 : 0.1);
+
+      if (displace) displace.setAttribute('scale', displayScale.toFixed(2));
+      if (turbulence) {
+        const freq = 0.010 + (displayScale / 34) * 0.01;
+        turbulence.setAttribute('baseFrequency', `${freq.toFixed(4)} ${(freq * 1.6).toFixed(4)}`);
+      }
+
+      // Efeito gelatina do cabeçalho (variável CSS) + brilho de vidro nos cards
+      const vNorm = Math.min(displayScale / 34, 1);
+      if (Math.abs(vNorm - lastV) > 0.004) {
+        document.documentElement.style.setProperty('--lg-v', vNorm.toFixed(3));
+        lastV = vNorm;
+      }
+      if (delta !== 0 || !sheenInit) {
+        sheenInit = true;
+        const vh = window.innerHeight;
+        const updates = [];
+        for (const el of lgCards) {            // 1º leitura...
+          const r = el.getBoundingClientRect();
+          if (r.bottom < -80 || r.top > vh + 80) continue;
+          updates.push([el, ((r.top + r.height / 2) / vh) * 150 - 25]);
+        }
+        for (const [el, pos] of updates) {     // ...2º escrita (evita recálculos de layout)
+          el.style.setProperty('--sheen', pos.toFixed(1) + '%');
+        }
+      }
+
+      requestAnimationFrame(animateLiquidGlass);
+    }
+    requestAnimationFrame(animateLiquidGlass);
+  }
+
+  // Parallax scrolling: cada camada se move em uma velocidade diferente
+  if (!reduceMotionQuery.matches) {
+    const layerDefs = [
+      ['.hero-media', -0.35, 1],                    // fundo (vídeo) anda mais devagar
+      ['.hero-copy', 0.10, 1],                      // texto do hero anda um pouco mais rápido
+      ['.about-frame img', -0.10, 1.14],            // foto da artista desliza dentro da moldura
+      ['.precos-photo img', -0.12, 1.16],           // foto do estúdio desliza dentro da área esmaecida
+      ['.service-card:nth-child(3n+2)', 0.05, 1],   // coluna do meio em outra profundidade
+      ['.location-map', -0.05, 1]                   // mapa circular flutua suavemente
+    ];
+    const layers = [];
+    layerDefs.forEach(([sel, speed, scale]) => {
+      document.querySelectorAll(sel).forEach(el => {
+        // a posição é medida no elemento pai (sem translate) para não criar realimentação
+        layers.push({ el, ref: el.parentElement, speed });
+        if (scale !== 1) el.style.scale = scale;
+      });
+    });
+    let parallaxTicking = false;
+    function parallaxFrame() {
+      parallaxTicking = false;
+      const vh = window.innerHeight;
+      const k = window.innerWidth < 768 ? 0.6 : 1;   // mais suave no celular
+      const updates = [];
+      for (const l of layers) {
+        const r = l.ref.getBoundingClientRect();
+        if (r.bottom < -400 || r.top > vh + 400) continue;
+        updates.push([l.el, ((r.top + r.height / 2) - vh / 2) * l.speed * k]);
+      }
+      for (const [el, y] of updates) el.style.translate = '0 ' + y.toFixed(1) + 'px';
+    }
+    window.addEventListener('scroll', () => {
+      if (!parallaxTicking) { parallaxTicking = true; requestAnimationFrame(parallaxFrame); }
+    }, { passive: true });
+    window.addEventListener('resize', parallaxFrame);
+    parallaxFrame();
+  }
+
+  // Menu mobile
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Vídeo do hero: respeita preferência de "reduced motion"
+  const heroVideo = document.querySelector('.hero-media video');
+  if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+  }
+
+  // Reveal on scroll
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+  // Galeria: drag horizontal (mouse + touch)
+  const track = document.getElementById('galleryTrack');
+  let isDown = false, startX, scrollLeft;
+
+  const startDrag = (x) => {
+    isDown = true;
+    track.classList.add('dragging');
+    startX = x - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  };
+  const moveDrag = (x, e) => {
+    if (!isDown) return;
+    if (e) e.preventDefault();
+    const walk = (x - track.offsetLeft - startX) * 1.2;
+    track.scrollLeft = scrollLeft - walk;
+  };
+  const endDrag = () => {
+    isDown = false;
+    track.classList.remove('dragging');
+  };
+
+  track.addEventListener('mousedown', (e) => startDrag(e.pageX));
+  track.addEventListener('mousemove', (e) => moveDrag(e.pageX, e));
+  track.addEventListener('mouseup', endDrag);
+  track.addEventListener('mouseleave', endDrag);
+
+  track.addEventListener('touchstart', (e) => startDrag(e.touches[0].pageX), { passive: true });
+  track.addEventListener('touchmove', (e) => moveDrag(e.touches[0].pageX), { passive: true });
+  track.addEventListener('touchend', endDrag);
+
+  // Tilt 3D nos cards de depoimento
+  if (!reduceMotion) {
+    document.querySelectorAll('[data-tilt]').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = ((y - rect.height / 2) / rect.height) * -8;
+        const rotateY = ((x - rect.width / 2) / rect.width) * 8;
+        card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(700px) rotateX(0) rotateY(0) translateY(0)';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
